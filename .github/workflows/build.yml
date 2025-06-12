@@ -32,9 +32,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-
     - name: Cleanup PSE
       if: always()
       uses: invisirisk/pse-action@latest
       with:
         cleanup: "true"
+    - name: Gather Job status
+      if: always()
+      uses: invisirisk/pse-action@v1.0.29
+      with:
+        get_jobs: "true"
