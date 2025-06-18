@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: Setup PSE
-      uses: ashokkasti-ir/pse-action@v0.0.1
+      uses: ashokkasti-ir/pse-action@latest
       with:
         api_url: "https://app.dev.veribom.com"
         app_token: ${{secrets.IR_API_KEY}}
@@ -31,11 +31,11 @@ jobs:
     - run: npm ci
     - name: Cleanup PSE
       if: always()
-      uses: ashokkasti-ir/pse-action@v0.0.1
+      uses: ashokkasti-ir/pse-action@latest
       with:
         cleanup: "true"
     - name: Gather Job status
       if: always()
-      uses: ashokkasti-ir/pse-action@v0.0.1
+      uses: ashokkasti-ir/pse-action@latest
       with:
         get_jobs: "true"
