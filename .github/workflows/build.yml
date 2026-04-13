@@ -30,9 +30,5 @@ jobs:
       if: always()
       uses: invisirisk/pse-action@latest
       with:
+        api_url: "https://app.stage.invisirisk.com"
         cleanup: "true"
-    - name: Gather Job status
-      if: always()
-      uses: invisirisk/pse-action@latest
-      with:
-        get_jobs: "true"
